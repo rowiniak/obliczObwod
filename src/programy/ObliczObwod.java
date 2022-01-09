@@ -1,5 +1,7 @@
 package programy;
 
+import java.util.Scanner;
+
 class Prostokat {
     private float bokA;
     private float bokB;
@@ -48,6 +50,8 @@ class Prostokat {
 public class ObliczObwod {
 
     public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
         try {
             Prostokat prostokat1 = new Prostokat(5, 6);
             System.out.println("Prostokąt o bokach " + prostokat1.getBokA() + " i " + prostokat1.getBokB() + " ma obwod o dlugości " + prostokat1.obliczObwod());
@@ -57,5 +61,17 @@ public class ObliczObwod {
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
+
+        System.out.println("Wprowadz bok A dla prostokąta 3");
+        float wprowadzBokA = input.nextFloat();
+
+        System.out.println("Wprowadz bok B dla prostokąta 3");
+        float wprowadzBokB = input.nextFloat();
+
+        Prostokat prostokat3 = new Prostokat(wprowadzBokA,wprowadzBokB);
+
+
+        System.out.println("Prostokąt 3 o bokach " + prostokat3.getBokA() + " i " + prostokat3.getBokB() + " ma obwod o dlugości " + prostokat3.obliczObwod());
+
     }
 }
